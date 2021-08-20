@@ -1,0 +1,99 @@
+#' A New Odd log-logistic family of distributions (ANOLL-G)
+#'
+#'  Distribution function, density, quantile function, hazard
+#'  function and random generation for Odd log-logistic family
+#'  of distributions (ANOLL-G) with baseline cdf G.
+#'
+#' @name ANOLLG
+#' @param x,q A numeric/quantiles	vector.
+#' @param n number of observations. If \code{length(n) > 1},
+#'  the length is taken to be the number required.
+#' @param alpha non-negative parameters.
+#' @param beta numeric parameters.
+#' @param G A baseline continuous cdf.
+#' @param ... The baseline cdf parameters.
+#' @return  \code{pollg} gives the distribution function,
+#'  \code{danollg} gives the density,
+#'  \code{qanollg} gives the quantile function,
+#'  \code{hanollg} gives the hazard function and
+#'  \code{ranollg} generates random variables from the Odd log-logistic family of
+#'  distributions (ANOLL-G) for baseline cdf G.
+#' @examples
+#' x <- seq(0, 1, length.out = 21)
+#' panollg(x)
+#' panollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+#' @export
+panollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
+  G <- sapply(x, G, ...)
+  F0 <- (1 - G^alpha)^beta / ((1 - G^alpha)^beta +  G^(alpha * beta))
+  return(F0)
+}
+
+#'
+#' @name ANOLLG
+#' @examples
+#' danollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+#' curve(danollg, -3, 3)
+#' @importFrom stats numericDeriv  pnorm  runif uniroot
+#' @export
+danollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
+  G0 <- function(y) G(y, ...)
+  myenv <- new.env()
+  myenv$par <- list(...)
+  myenv$x <- as.numeric(x)
+  g0 <- numericDeriv(quote(G0(x)), "x", myenv)
+  g <- diag(attr(g0, "gradient"))
+  G <- sapply(x, G0)
+  df <- alpha * beta * g * (1 - G)^(alpha * beta - 1) * (1 - (1 - G)^(alpha))^(beta - 1) / ((1 - (1 - G)^(alpha))^(beta - 1) + (1 - G)^(alpha * beta))^2
+  return(df)
+}
+
+
+#'
+#' @name ANOLLG
+#' @examples
+#' qanollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+#' @export
+qanollg <- function(q, alpha = 1, beta = 1, G = pnorm, ...) {
+  q0 <- function(x0) {
+    if (x0 < 0 || x0 > 1) stop(message = "[Warning] 0 < x < 1.")
+    F0 <- function(t) x0 - panollg(t, alpha, beta, G, ...)
+    F0 <- Vectorize(F0)
+    x0 <- uniroot(F0, interval = c(-1e+15, 1e+15))$root
+    return(x0)
+  }
+  return(sapply(q, q0))
+}
+
+
+#'
+#' @name ANOLLG
+#' @examples
+#' n <- 10
+#' ranollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+#' @export
+ranollg <- function(n, alpha = 1, beta=1, G = pnorm, ...) {
+  u <- runif(n)
+  Q_G <- function(y) qanollg(y, alpha, beta, G, ...)
+  X <- Q_G(1 - ((1 - u) ^ (1 / (alpha * beta)) / (u^(1 / beta) + (1 - u)^(1 / beta)))^(1 / alpha))
+  return(X)
+}
+
+
+#'
+#' @name OLLG
+#' @examples
+#' hanollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+#' curve(hanollg, -3, 3)
+#' @export
+hanollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
+  G0 <- function(y) G(y, ...)
+  myenv <- new.env()
+  myenv$par <- list(...)
+  myenv$x <- as.numeric(x)
+  g0 <- numericDeriv(quote(G0(x)), "x", myenv)
+  g <- diag(attr(g0, "gradient"))
+  G <- sapply(x, G0)
+  h <- alpha * beta * g * (1 - G)^(alpha * beta - 1) / (1 - G) * ((1 - (1 - G)^(alpha))^(beta - 1) + (1 - G)^(alpha * beta))
+  return(h)
+}

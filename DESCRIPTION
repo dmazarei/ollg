@@ -4,7 +4,7 @@ Title: Odd Log-Logistic Family of Distributions (OLL-G)
 Version: 0.0.1
 Authors@R: c(
     person("Hossein", "Haghbin", email = "haghbinh@gmail.com", role = c("aut", "cre"),comment = c(ORCID = "0000-0001-8416-2354")),
-    person("Danial", "Mazarei", email = "danial.mazarei@gmail.com", role = c("aut", "cre")),
+    person("Danial", "Mazarei", email = "danial.mazarei@gmail.com", role = "aut"),
     person("Morad", "Alizadeh", email = "moradalizadeh78@gmail.com", role = "aut")
     )
 Maintainer: Hossein Haghbin <haghbinh@gmail.com>
