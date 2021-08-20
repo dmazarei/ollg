@@ -6,6 +6,7 @@
 \alias{danollg}
 \alias{qanollg}
 \alias{ranollg}
+\alias{hanollg}
 \title{A New Odd log-logistic family of distributions (ANOLL-G)}
 \usage{
 panollg(x, alpha = 1, beta = 1, G = pnorm, ...)
@@ -15,6 +16,8 @@ danollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 qanollg(q, alpha = 1, beta = 1, G = pnorm, ...)
 
 ranollg(n, alpha = 1, beta = 1, G = pnorm, ...)
+
+hanollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 }
 \arguments{
 \item{x, q}{A numeric/quantiles    vector.}
@@ -52,4 +55,6 @@ curve(danollg, -3, 3)
 qanollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 n <- 10
 ranollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+hanollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+curve(hanollg, -3, 3)
 }
