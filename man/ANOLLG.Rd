@@ -34,16 +34,16 @@ hanollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 the length is taken to be the number required.}
 }
 \value{
-\code{pollg} gives the distribution function,
+\code{panollg} gives the distribution function,
  \code{danollg} gives the density,
  \code{qanollg} gives the quantile function,
  \code{hanollg} gives the hazard function and
- \code{ranollg} generates random variables from the Odd log-logistic family of
+ \code{ranollg} generates random variables from the A New Odd log-logistic family of
  distributions (ANOLL-G) for baseline cdf G.
 }
 \description{
 Distribution function, density, quantile function, hazard
- function and random generation for Odd log-logistic family
+ function and random generation for A New Odd log-logistic family
  of distributions (ANOLL-G) with baseline cdf G.
 }
 \examples{

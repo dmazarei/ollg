@@ -12,11 +12,11 @@
 #' @param beta numeric parameters.
 #' @param G A baseline continuous cdf.
 #' @param ... The baseline cdf parameters.
-#' @return  \code{pollg} gives the distribution function,
+#' @return  \code{panollg} gives the distribution function,
 #'  \code{danollg} gives the density,
 #'  \code{qanollg} gives the quantile function,
 #'  \code{hanollg} gives the hazard function and
-#'  \code{ranollg} generates random variables from the Odd log-logistic family of
+#'  \code{ranollg} generates random variables from the A New Odd log-logistic family of
 #'  distributions (ANOLL-G) for baseline cdf G.
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
