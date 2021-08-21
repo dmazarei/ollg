@@ -25,7 +25,7 @@
 #' @export
 panollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
-  F0 <- (1 - G^alpha)^beta / ((1 - G^alpha)^beta +  G^(alpha * beta))
+  F0 <- (1 - (1-G)^alpha)^beta / ((1 - (1-G)^alpha)^beta +  (1-G)^(alpha * beta))
   return(F0)
 }
 
