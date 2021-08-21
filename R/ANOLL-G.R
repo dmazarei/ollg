@@ -25,7 +25,7 @@
 #' @export
 panollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
-  F0 <- (1 - (1-G)^alpha)^beta / ((1 - (1-G)^alpha)^beta +  (1-G)^(alpha * beta))
+  F0 <- (1 - (1 - G)^alpha)^beta / ((1 - (1 - G)^alpha)^beta + (1 - G)^(alpha * beta))
   return(F0)
 }
 
@@ -72,10 +72,10 @@ qanollg <- function(q, alpha = 1, beta = 1, G = pnorm, ...) {
 #' n <- 10
 #' ranollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
-ranollg <- function(n, alpha = 1, beta=1, G = pnorm, ...) {
+ranollg <- function(n, alpha = 1, beta = 1, G = pnorm, ...) {
   u <- runif(n)
   Q_G <- function(y) qanollg(y, alpha, beta, G, ...)
-  X <- Q_G(1 - ((1 - u) ^ (1 / (alpha * beta)) / (u^(1 / beta) + (1 - u)^(1 / beta)))^(1 / alpha))
+  X <- Q_G(1 - ((1 - u)^(1 / (alpha * beta)) / (u^(1 / beta) + (1 - u)^(1 / beta)))^(1 / alpha))
   return(X)
 }
 
