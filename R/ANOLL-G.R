@@ -1,7 +1,7 @@
 #' A New Odd log-logistic family of distributions (ANOLL-G)
 #'
 #'  Distribution function, density, quantile function, hazard
-#'  function and random generation for Odd log-logistic family
+#'  function and random generation for A New Odd log-logistic family
 #'  of distributions (ANOLL-G) with baseline cdf G.
 #'
 #' @name ANOLLG
