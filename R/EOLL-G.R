@@ -75,7 +75,7 @@ qeollg <- function(q, alpha = 1, beta = 1, G = pnorm, ...) {
 reollg <- function(n, alpha = 1, beta = 1, G = pnorm, ...) {
   u <- runif(n)
   Q_G <- function(y) qeollg(y, alpha, beta, G, ...)
-  X <- Q_G(u^(1 / (alpha * beta)) / (u^(1 / alpha * beta) + (1 - u^((1 / beta)))^(1 / alpha)))
+  X <- Q_G(u^(1 / (alpha * beta)) / (u^(1 / (alpha * beta)) + (1 - u^((1 / beta)))^(1 / alpha)))
   return(X)
 }
 
