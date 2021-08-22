@@ -58,3 +58,6 @@ reollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 heollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
 curve(heollg, -3, 3)
 }
+\references{
+Cordeiro , G . M . , Alizadeh , M . , Ozel , G . , Hosseini , B . , Ortega , E . M . M . , Altun , E . ( 2017 ) . The generalized odd log - logistic family of distributions : properties , regression models and applications . Journal of Statistical Computation and Simulation , 87 ( 5 ) , 908 - 932 .
+}
