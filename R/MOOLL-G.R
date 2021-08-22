@@ -18,6 +18,8 @@
 #'  \code{hmoollg} gives the hazard function and
 #'  \code{rmoollg} generates random variables from the Marshal-Olkin Odd log-logistic family of
 #'  distributions (MOOLL-G) for baseline cdf G.
+#'
+#' @references Gleaton, J. U., Lynch, J. D. (2010). Extended generalized loglogistic families of lifetime distributions with an application. J. Probab. Stat.Sci, 8(1), 1-17.
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' pmoollg(x)

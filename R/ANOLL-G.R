@@ -18,6 +18,7 @@
 #'  \code{hanollg} gives the hazard function and
 #'  \code{ranollg} generates random variables from the A New Odd log-logistic family of
 #'  distributions (ANOLL-G) for baseline cdf G.
+#' @references Haghbin, Hossein, et al. "A new generalized odd log-logistic family of distributions." Communications in Statistics-Theory and Methods 46.20(2017): 9897-9920.
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' panollg(x)

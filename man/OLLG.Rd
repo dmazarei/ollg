@@ -57,3 +57,6 @@ rollg(n, alpha = 2, G = pbeta, shape1 = 1, shape2 = 2)
 hollg(x, alpha = 2, G = pbeta, shape1 = 1, shape2 = 2)
 curve(hollg, -3, 3)
 }
+\references{
+Gleaton, J. U., Lynch, J. D. (2006). Properties of generalized log-logistic families of lifetime distributions. Journal of Probability and Statistical Science, 4(1), 51-64.
+}

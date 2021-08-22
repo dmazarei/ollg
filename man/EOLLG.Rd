@@ -58,3 +58,6 @@ reollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 heollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
 curve(heollg, -3, 3)
 }
+\references{
+ALIZADEH, Morad; TAHMASEBI, Saeid; HAGHBIN, Hossein. The exponentiated odd log-logistic family of distributions: Properties and applications. Journal of Statistical Modelling: Theory and Applications, 2020, 1. Jg., Nr. 1, S. 29-52.
+}

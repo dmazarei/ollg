@@ -58,3 +58,6 @@ ranollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 hanollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
 curve(hanollg, -3, 3)
 }
+\references{
+Haghbin, Hossein, et al. "A new generalized odd log-logistic family of distributions." Communications in Statistics-Theory and Methods 46.20(2017): 9897-9920.
+}

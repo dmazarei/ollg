@@ -18,7 +18,7 @@
 #'  \code{heollg} gives the hazard function and
 #'  \code{reollg} generates random variables from the Exponentiated Odd log-logistic family of
 #'  distributions (EOLL-G) for baseline cdf G.
-#'
+#' @references ALIZADEH, Morad; TAHMASEBI, Saeid; HAGHBIN, Hossein. The exponentiated odd log-logistic family of distributions: Properties and applications. Journal of Statistical Modelling: Theory and Applications, 2020, 1. Jg., Nr. 1, S. 29-52.
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' peollg(x)

@@ -58,3 +58,6 @@ rmoollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 hmoollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 curve(hmoollg, -3, 3)
 }
+\references{
+Gleaton, J. U., Lynch, J. D. (2010). Extended generalized loglogistic families of lifetime distributions with an application. J. Probab. Stat.Sci, 8(1), 1-17.
+}

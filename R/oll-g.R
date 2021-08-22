@@ -17,6 +17,7 @@
 #'  \code{hollg} gives the hazard function and
 #'  \code{rollg} generates random variables from the Odd log-logistic family of
 #'  distributions (OLL-G) for baseline cdf G.
+#' @references Gleaton, J. U., Lynch, J. D. (2006). Properties of generalized log-logistic families of lifetime distributions. Journal of Probability and Statistical Science, 4(1), 51-64.
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' pollg(x)
