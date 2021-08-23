@@ -45,7 +45,7 @@ dnollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
   g0 <- numericDeriv(quote(G0(x)), "x", myenv)
   g <- diag(attr(g0, "gradient"))
   G <- sapply(x, G0)
-  df <-  g * G^(alpha - 1) * (1 - G)^(beta - 1) * (alpha + (beta - alpha) * G) / (G^alpha +  (1 - G)^beta)^2
+  df <- g * G^(alpha - 1) * (1 - G)^(beta - 1) * (alpha + (beta - alpha) * G) / (G^alpha + (1 - G)^beta)^2
   return(df)
 }
 
@@ -93,6 +93,6 @@ hnollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
   g0 <- numericDeriv(quote(G0(x)), "x", myenv)
   g <- diag(attr(g0, "gradient"))
   G <- sapply(x, G0)
-  h <- g * G^(alpha - 1) * (alpha + (beta - alpha) * G) / ((1 - G) * (G^alpha +  (1 - G)^beta))
+  h <- g * G^(alpha - 1) * (alpha + (beta - alpha) * G) / ((1 - G) * (G^alpha + (1 - G)^beta))
   return(h)
 }
