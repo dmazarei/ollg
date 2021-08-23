@@ -15,7 +15,7 @@ dnollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 
 qnollg(q, alpha = 1, beta = 1, G = pnorm, ...)
 
-rnollg(n)
+rnollg(n, alpha = 1, beta = 1, G = pnorm, ...)
 
 hnollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 }
@@ -54,7 +54,7 @@ dnollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 curve(dnollg, -3, 3)
 qnollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 n <- 10
-rnollg(n)
+rnollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 hnollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 curve(hnollg, -3, 3)
 }

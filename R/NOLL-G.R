@@ -71,13 +71,14 @@ qnollg <- function(q, alpha = 1, beta = 1, G = pnorm, ...) {
 #' @name NOLLG
 #' @examples
 #' n <- 10
-#' rnollg(n)
+#' rnollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
-rnollg <- function(n) {
+rnollg <- function(n, alpha = 1, beta = 1, G = pnorm, ...) {
   u <- runif(n)
-  return(u)
+  Q_G <- function(y) qnollg(y, alpha, beta, G, ...)
+  X <- Q_G(u)
+  return(X)
 }
-
 
 #'
 #' @name NOLLG
