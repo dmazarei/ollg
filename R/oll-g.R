@@ -8,7 +8,7 @@
 #' @param x,q A numeric/quantiles	vector.
 #' @param n number of observations. If \code{length(n) > 1},
 #'  the length is taken to be the number required.
-#' @param alpha non-negative parameters.
+#' @param alpha non-negative parameter.
 #' @param G A baseline continuous cdf.
 #' @param ... The baseline cdf parameters.
 #' @return  \code{pollg} gives the distribution function,

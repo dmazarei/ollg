@@ -22,9 +22,9 @@ hnollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 \arguments{
 \item{x, q}{A numeric/quantiles    vector.}
 
-\item{alpha}{non-negative parameters.}
+\item{alpha}{non-negative parameter.}
 
-\item{beta}{non-negative parameters.}
+\item{beta}{non-negative parameter.}
 
 \item{G}{A baseline continuous cdf.}
 
