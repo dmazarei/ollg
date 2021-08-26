@@ -4,7 +4,7 @@
 #'  function and random generation for Odd Burr generated family
 #'  of distributions (OBu-G) with baseline cdf G.
 #'
-#' @name OBUG
+#' @name OBuG
 #' @param x,q A numeric/quantiles	vector.
 #' @param n number of observations. If \code{length(n) > 1},
 #'  the length is taken to be the number required.
@@ -32,7 +32,7 @@ pobug <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
 }
 
 #'
-#' @name OBUG
+#' @name OBuG
 #' @examples
 #' dobug(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(dobug, -3, 3)
@@ -52,7 +52,7 @@ dobug <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
 
 
 #'
-#' @name OBUG
+#' @name OBuG
 #' @examples
 #' qobug(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
@@ -69,7 +69,7 @@ qobug <- function(q, alpha = 1, beta = 1, G = pnorm, ...) {
 
 
 #'
-#' @name OBUG
+#' @name OBuG
 #' @examples
 #' n <- 10
 #' robug(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
@@ -84,7 +84,7 @@ robug <- function(n, alpha = 1, beta = 1, G = pnorm, ...) {
 
 
 #'
-#' @name OBUG
+#' @name OBuG
 #' @examples
 #' hobug(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(hobug, -3, 3)
