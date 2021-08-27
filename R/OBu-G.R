@@ -18,7 +18,7 @@
 #'  \code{hobug} gives the hazard function and
 #'  \code{robug} generates random variables from the Odd Burr generated family of
 #'  distributions (OBu-G) for baseline cdf G.
-#' @references Gleaton, J. U., Lynch, J. D. (2006). Properties of generalized log-logistic families of lifetime distributions. Journal of Probability and Statistical Science, 4(1), 51-64.
+#' @references Alizadeh, M., Cordeiro, G. M., Nascimento, A. D., Lima, M. D. C. S., Ortega, E. M. (2017). Odd-Burr generalized family of distributions with some applications. Journal of statistical computation and simulation, 87(2), 367-389.
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' pobug(x)
