@@ -1,4 +1,4 @@
-#' Kumaraswamy Odd log-logistic family of distributions (KwOLL-G)
+#'  Kumaraswamy Odd log-logistic family of distributions (KwOLL-G)
 #'
 #'  Distribution function, density, quantile function, hazard
 #'  function and random generation for Kumaraswamy Odd log-logistic family
@@ -27,14 +27,14 @@
 #' @export
 pkwollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
-  F0 <- G^(alpha * beta) / (G^alpha + (1 - G)^alpha)^beta
+  F0 <- 1 - (1 - (G^alpha / (G^alpha + (1 - G)^alpha))^a)^b
   return(F0)
 }
 
 #'
 #' @name KwOLLG
 #' @examples
-#' dkwollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+#' dkwollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(dkwollg, -3, 3)
 #' @importFrom stats numericDeriv  pnorm  runif uniroot
 #' @export
@@ -46,7 +46,7 @@ dkwollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   g0 <- numericDeriv(quote(G0(x)), "x", myenv)
   g <- diag(attr(g0, "gradient"))
   G <- sapply(x, G0)
-  df <- alpha * beta * g * G^(alpha * beta - 1) * (1 - G)^(alpha - 1) / ((G^alpha) + (1 - G)^alpha)^(beta + 1)
+  df <- (a * b * alpha * g * G^(a * alpha - 1) * (1 - G)^(alpha - 1) / ((G^alpha) + (1 - G)^alpha)^(a + 1)) * (1 - (G^alpha / (G^alpha + (1 - G)^alpha))^a)^(b - 1)
   return(df)
 }
 
@@ -54,7 +54,7 @@ dkwollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #'
 #' @name KwOLLG
 #' @examples
-#' qkwollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+#' qkwollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 qkwollg <- function(q, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   q0 <- function(x0) {
@@ -72,7 +72,7 @@ qkwollg <- function(q, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #' @name KwOLLG
 #' @examples
 #' n <- 10
-#' rkwollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+#' rkwollg(n, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 rkwollg <- function(n, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   u <- runif(n)

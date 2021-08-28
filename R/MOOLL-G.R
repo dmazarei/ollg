@@ -1,4 +1,4 @@
-#'  Marshal-Olkin Odd log-logistic family of distributions (MOOLL-G)
+#' Marshal-Olkin Odd log-logistic family of distributions (MOOLL-G)
 #'
 #'  Distribution function, density, quantile function, hazard
 #'  function and random generation for Marshal-Olkin Odd log-logistic family

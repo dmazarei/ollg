@@ -1,4 +1,4 @@
-#'  New Odd log-logistic family of distributions (NOLL-G)
+#' New Odd log-logistic family of distributions (NOLL-G)
 #'
 #'  Distribution function, density, quantile function, hazard
 #'  function and random generation for New Odd log-logistic family
