@@ -23,7 +23,7 @@
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' pkwollg(x)
-#' pkwollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+#' pkwollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 pkwollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
@@ -77,7 +77,7 @@ qkwollg <- function(q, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 rkwollg <- function(n, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   u <- runif(n)
   Q_G <- function(y) qkwollg(y, alpha, a, b, G, ...)
-  X <- Q_G((1-(1-u)^(1 / (b)))^(1/(a*alpha)) / (((1-(1-u)^(1 / (b)))^(1/(a*alpha))) + (1-(1-(1-u)^(1/b))^(1/a))^(1/alpha)))
+  X <- Q_G((1 - (1 - u)^(1 / (b)))^(1 / (a * alpha)) / (((1 - (1 - u)^(1 / (b)))^(1 / (a * alpha))) + (1 - (1 - (1 - u)^(1 / b))^(1 / a))^(1 / alpha)))
   return(X)
 }
 

@@ -51,7 +51,7 @@ Distribution function, density, quantile function, hazard
 \examples{
 x <- seq(0, 1, length.out = 21)
 pkwollg(x)
-pkwollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+pkwollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
 dkwollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
 curve(dkwollg, -3, 3)
 qkwollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
