@@ -1,4 +1,4 @@
-#'  Kumaraswamy Odd log-logistic family of distributions (KwOLL-G)
+#' Kumaraswamy Odd log-logistic family of distributions (KwOLL-G)
 #'
 #'  Distribution function, density, quantile function, hazard
 #'  function and random generation for Kumaraswamy Odd log-logistic family
@@ -77,7 +77,7 @@ qkwollg <- function(q, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 rkwollg <- function(n, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   u <- runif(n)
   Q_G <- function(y) qkwollg(y, alpha, a, b, G, ...)
-  X <- Q_G(u^(1 / (alpha * beta)) / (u^(1 / (alpha * beta)) + (1 - u^((1 / beta)))^(1 / alpha)))
+  X <- Q_G((1-(1-u)^(1 / (b)))^(1/(a*alpha)) / (((1-(1-u)^(1 / (b)))^(1/(a*alpha))) + (1-(1-(1-u)^(1/b))^(1/a))^(1/alpha)))
   return(X)
 }
 
@@ -96,6 +96,6 @@ hkwollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   g0 <- numericDeriv(quote(G0(x)), "x", myenv)
   g <- diag(attr(g0, "gradient"))
   G <- sapply(x, G0)
-  h <- alpha * beta * g * G^(alpha * beta - 1) * (1 - G)^(alpha - 1) / (((G^alpha) + (1 - G)^alpha) * (((G^alpha) + (1 - G)^alpha)^beta - G^(alpha * beta)))
+  h <- a * b * alpha * g * G^(a * alpha - 1) * (1 - G)^(alpha - 1) / (((G^alpha) + (1 - G)^alpha)^(a + 1) * (1 - (G^alpha / (G^alpha + (1 - G)^alpha))^a))
   return(h)
 }
