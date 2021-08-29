@@ -28,7 +28,7 @@
 pbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
   u <- G^alpha / (G^alpha + (1 - G)^alpha)
-  F0 <- integrate(function(x) 1/beta(a,b) * x^(a-1)*(1-t)^(b-1),0,u)$value
+  F0 <- integrate(function(x) 1 / beta(a, b) * x^(a - 1) * (1 - t)^(b - 1), 0, u)$value
   return(F0)
 }
 
@@ -48,7 +48,7 @@ dbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   g0 <- numericDeriv(quote(G0(x)), "x", myenv)
   g <- diag(attr(g0, "gradient"))
   G <- sapply(x, G0)
-  df <- alpha * g * G^(a * alpha - 1) * (1 - G)^(b * alpha - 1) / (beta(a,b) * ((G^alpha) + (1 - G)^alpha)^(a + b))
+  df <- alpha * g * G^(a * alpha - 1) * (1 - G)^(b * alpha - 1) / (beta(a, b) * ((G^alpha) + (1 - G)^alpha)^(a + b))
   return(df)
 }
 
@@ -77,9 +77,9 @@ qbollg <- function(q, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #' rbollg(n, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 rbollg <- function(n, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
-  v <- rbeta(n,a,b)
+  v <- rbeta(n, a, b)
   Q_G <- function(y) qbollg(y, alpha, G, ...)
-  X <- Q_G( v^(1/alpha) / (v^(1/alpha) + (1 - v)^(1/alpha)))
+  X <- Q_G(v^(1 / alpha) / (v^(1 / alpha) + (1 - v)^(1 / alpha)))
   return(X)
 }
 
@@ -98,6 +98,6 @@ hbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   g0 <- numericDeriv(quote(G0(x)), "x", myenv)
   g <- diag(attr(g0, "gradient"))
   G <- sapply(x, G0)
-  h <- alpha * g * G^(a * alpha - 1) * (1 - G)^(b * alpha - 1) / (beta(a,b) * ((G^alpha) + (1 - G)^alpha)^(a + b) * (1 - alpha * g * G^(a * alpha - 1) * (1 - G)^(b * alpha - 1) / (beta(a,b) * ((G^alpha) + (1 - G)^alpha)^(a + b))))
+  h <- alpha * g * G^(a * alpha - 1) * (1 - G)^(b * alpha - 1) / (beta(a, b) * ((G^alpha) + (1 - G)^alpha)^(a + b) * (1 - alpha * g * G^(a * alpha - 1) * (1 - G)^(b * alpha - 1) / (beta(a, b) * ((G^alpha) + (1 - G)^alpha)^(a + b))))
   return(h)
 }
