@@ -20,7 +20,7 @@
 #'  \code{rbollg} generates random variables from the The beta Odd log-logistic family of
 #'  distributions (BOLL-G) for baseline cdf G.
 #' @references Cordeiro, G. M., Alizadeh, M., Tahir, M. H., Mansoor, M., Bourguignon, M., Hamedani, G. G. (2016). The beta odd log-logistic generalized family of distributions. Hacettepe Journal of Mathematics and Statistics, 45(4), 1175-1202.
-#' @importFrom base beta
+#' @importFrom stats numericDeriv  pnorm  rbeta  uniroot  integrate
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' pbollg(x)
@@ -29,16 +29,20 @@
 pbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
   u <- G^alpha / (G^alpha + (1 - G)^alpha)
-  F0 <- integrate(function(x) 1 / beta(a, b) * x^(a - 1) * (1 - t)^(b - 1), 0, u)$value
+  n <- length(u)
+  F0 <- rep(NA, n)
+  for (i in 1:n) {
+    F0[i] <- integrate(function(t) 1 / beta(a, b) * t^(a - 1) * (1 - t)^(b - 1), 0, u[i])$value
+  }
   return(F0)
 }
+
 
 #'
 #' @name BOLLG
 #' @examples
 #' dbollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(dbollg, -3, 3)
-#' @importFrom stats numericDeriv  pnorm  rbeta uniroot integrate
 #' @export
 dbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   G0 <- function(y) G(y, ...)
@@ -78,7 +82,7 @@ qbollg <- function(q, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #' @export
 rbollg <- function(n, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   v <- rbeta(n, a, b)
-  Q_G <- function(y) qbollg(y, alpha, G, ...)
+  Q_G <- function(y) qbollg(y, alpha, a, b, G, ...)
   X <- Q_G(v^(1 / alpha) / (v^(1 / alpha) + (1 - v)^(1 / alpha)))
   return(X)
 }
