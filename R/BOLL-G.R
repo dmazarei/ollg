@@ -20,8 +20,6 @@
 #'  \code{rbollg} generates random variables from the The beta Odd log-logistic family of
 #'  distributions (BOLL-G) for baseline cdf G.
 #' @references Cordeiro, G. M., Alizadeh, M., Tahir, M. H., Mansoor, M., Bourguignon, M., Hamedani, G. G. (2016). The beta odd log-logistic generalized family of distributions. Hacettepe Journal of Mathematics and Statistics, 45(4), 1175-1202.
-#' @importFrom stats integrate
-#' @importFrom base beta
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' pbollg(x)
@@ -39,7 +37,7 @@ pbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #' @examples
 #' dbollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(dbollg, -3, 3)
-#' @importFrom stats numericDeriv  pnorm  runif uniroot
+#' @importFrom stats numericDeriv  pnorm  rbeta uniroot integrate
 #' @importFrom base beta
 #' @export
 dbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
@@ -50,7 +48,7 @@ dbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   g0 <- numericDeriv(quote(G0(x)), "x", myenv)
   g <- diag(attr(g0, "gradient"))
   G <- sapply(x, G0)
-  df <- (alpha * g * G^(a * alpha - 1) * (1 - G)^(b * alpha - 1) / (beta(a,b) (G^alpha) + (1 - G)^alpha)^(a + 1)) * (1 - (G^alpha / (G^alpha + (1 - G)^alpha))^a)^(b - 1)
+  df <- alpha * g * G^(a * alpha - 1) * (1 - G)^(b * alpha - 1) / (beta(a,b) * ((G^alpha) + (1 - G)^alpha)^(a + b))
   return(df)
 }
 
@@ -79,9 +77,9 @@ qbollg <- function(q, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #' rbollg(n, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 rbollg <- function(n, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
-  u <- runif(n)
-  Q_G <- function(y) qbollg(y, alpha, a, b, G, ...)
-  X <- Q_G((1 - (1 - u)^(1 / (b)))^(1 / (a * alpha)) / (((1 - (1 - u)^(1 / (b)))^(1 / (a * alpha))) + (1 - (1 - (1 - u)^(1 / b))^(1 / a))^(1 / alpha)))
+  v <- rbeta(n,a,b)
+  Q_G <- function(y) qbollg(y, alpha, G, ...)
+  X <- Q_G( v^(1/alpha) / (v^(1/alpha) + (1 - v)^(1/alpha)))
   return(X)
 }
 
@@ -100,6 +98,6 @@ hbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   g0 <- numericDeriv(quote(G0(x)), "x", myenv)
   g <- diag(attr(g0, "gradient"))
   G <- sapply(x, G0)
-  h <- a * b * alpha * g * G^(a * alpha - 1) * (1 - G)^(alpha - 1) / (((G^alpha) + (1 - G)^alpha)^(a + 1) * (1 - (G^alpha / (G^alpha + (1 - G)^alpha))^a))
+  h <- alpha * g * G^(a * alpha - 1) * (1 - G)^(b * alpha - 1) / (beta(a,b) * ((G^alpha) + (1 - G)^alpha)^(a + b) * (1 - alpha * g * G^(a * alpha - 1) * (1 - G)^(b * alpha - 1) / (beta(a,b) * ((G^alpha) + (1 - G)^alpha)^(a + b))))
   return(h)
 }
