@@ -20,6 +20,7 @@
 #'  \code{rbollg} generates random variables from the The beta Odd log-logistic family of
 #'  distributions (BOLL-G) for baseline cdf G.
 #' @references Cordeiro, G. M., Alizadeh, M., Tahir, M. H., Mansoor, M., Bourguignon, M., Hamedani, G. G. (2016). The beta odd log-logistic generalized family of distributions. Hacettepe Journal of Mathematics and Statistics, 45(4), 1175-1202.
+#' @importFrom base beta
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' pbollg(x)
@@ -38,7 +39,6 @@ pbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #' dbollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(dbollg, -3, 3)
 #' @importFrom stats numericDeriv  pnorm  rbeta uniroot integrate
-#' @importFrom base beta
 #' @export
 dbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   G0 <- function(y) G(y, ...)
