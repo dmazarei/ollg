@@ -29,11 +29,7 @@
 pbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
   u <- G^alpha / (G^alpha + (1 - G)^alpha)
-  n <- length(u)
-  F0 <- rep(NA, n)
-  for (i in 1:n) {
-    F0[i] <- integrate(function(t) 1 / beta(a, b) * t^(a - 1) * (1 - t)^(b - 1), 0, u[i])$value
-  }
+  F0 <- pbeta(u,a, b) - pbeta(u,a, b)
   return(F0)
 }
 
