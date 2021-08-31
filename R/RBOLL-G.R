@@ -19,7 +19,7 @@
 #'  \code{rrbollg} generates random variables from the The Ristic-Balakrishnan  Odd log-logistic family of
 #'  distributions (RBOLL-G) for baseline cdf G.
 #' @references Esmaeili, H., Lak, F., Altun, E. (2020). The Ristic-Balakrishnan odd log-logistic family of distributions: Properties and Applications. Statistics, Optimization Information Computing, 8(1), 17-35.
-#' @importFrom stats numericDeriv  pnorm  rgamma  uniroot  integrate
+#' @importFrom stats numericDeriv  pnorm  rgamma qgamma  uniroot  integrate
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' prbollg(x)
@@ -59,7 +59,7 @@ drbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
 #'
 #' @name RBOLLG
 #' @examples
-#' qrbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' qrbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 qrbollg <- function(q, alpha = 1, beta = 1, G = pnorm, ...) {
   q0 <- function(x0) {
@@ -80,9 +80,9 @@ qrbollg <- function(q, alpha = 1, beta = 1, G = pnorm, ...) {
 #' rrbollg(n, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 rrbollg <- function(n, alpha = 1, beta = 1, G = pnorm, ...) {
-  v <- rgamma(n, beta,1)
+  v <- rgamma(n, beta, 1)
   Q_G <- function(y) qrbollg(y, alpha, beta, G, ...)
-  X <- Q_G(exp(qgamma(1-v,beta,1)/alpha) / (exp(qgamma(1-v,beta,1)/alpha) + (1 - exp(qgamma(1-v,beta,1)))^(1/alpha)))
+  X <- Q_G(exp(qgamma(1 - v, beta, 1) / alpha) / (exp(qgamma(1 - v, beta, 1) / alpha) + (1 - exp(qgamma(1 - v, beta, 1)))^(1 / alpha)))
   return(X)
 }
 
@@ -107,6 +107,6 @@ hrbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
   for (i in 1:n) {
     F0[i] <- integrate(function(t) 1 / gamma(beta) * t^(beta - 1) * exp(-t), 0, u[i])$value
   }
-  h <- alpha * g * G^(alpha - 1) * (1 - G)^(alpha - 1) * (-log(G^alpha / (G^alpha + (1 - G)^alpha)))^(beta - 1) / (gamma(beta) * ((G^alpha) + (1 - G)^alpha)^2 *F0)
+  h <- alpha * g * G^(alpha - 1) * (1 - G)^(alpha - 1) * (-log(G^alpha / (G^alpha + (1 - G)^alpha)))^(beta - 1) / (gamma(beta) * ((G^alpha) + (1 - G)^alpha)^2 * F0)
   return(h)
 }

@@ -52,7 +52,7 @@ prbollg(x)
 prbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
 drbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
 curve(drbollg, -3, 3)
-qrbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+qrbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 n <- 10
 rrbollg(n, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
 hrbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
