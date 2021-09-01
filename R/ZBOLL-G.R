@@ -19,7 +19,7 @@
 #'  \code{rzbollg} generates random variables from the The Zografos-Balakrishnan  Odd log-logistic family of
 #'  distributions (ZBOLL-G) for baseline cdf G.
 #' @references Cordeiro, G. M., Alizadeh, M., Ortega, E. M., Serrano, L. H. V. (2016). The Zografos-Balakrishnan odd log-logistic family of distributions: Properties and Applications. Hacettepe Journal of Mathematics and Statistics, 45(6), 1781-1803. .
-#' @importFrom stats numericDeriv  pnorm  rgamma  uniroot  integrate
+#' @importFrom stats numericDeriv  pnorm  rgamma pgamma uniroot  integrate
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' pzbollg(x)
