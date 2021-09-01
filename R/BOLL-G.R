@@ -29,7 +29,7 @@
 pbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
   u <- G^alpha / (G^alpha + (1 - G)^alpha)
-  F0 <- pbeta(u,a, b) - pbeta(0,a, b)
+  F0 <- pbeta(u, a, b) - pbeta(0, a, b)
   return(F0)
 }
 

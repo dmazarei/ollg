@@ -19,7 +19,7 @@
 #'  \code{rrbollg} generates random variables from the The Ristic-Balakrishnan  Odd log-logistic family of
 #'  distributions (RBOLL-G) for baseline cdf G.
 #' @references Esmaeili, H., Lak, F., Altun, E. (2020). The Ristic-Balakrishnan odd log-logistic family of distributions: Properties and Applications. Statistics, Optimization Information Computing, 8(1), 17-35.
-#' @importFrom stats numericDeriv  pnorm  rgamma qgamma  uniroot  integrate
+#' @importFrom stats numericDeriv  pnorm  rgamma qgamma pgamma uniroot  integrate
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' prbollg(x)
@@ -28,11 +28,7 @@
 prbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
   u <- -log(G^alpha / (G^alpha + (1 - G)^alpha))
-  n <- length(u)
-  F0 <- rep(NA, n)
-  for (i in 1:n) {
-    F0[i] <- integrate(function(t) 1 / gamma(beta) * t^(beta - 1) * exp(-t), 0, u[i])$value
-  }
+  F0 <- pgamma(u, shape = beta) - pgamma(0, shape = beta)
   return(1 - F0)
 }
 

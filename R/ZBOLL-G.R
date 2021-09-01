@@ -28,7 +28,7 @@
 pzbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
   u <- -log(1 - G^alpha / (G^alpha + (1 - G)^alpha))
-  F0 <- pgamma(u,shape = beta) - pgamma(0,shape = beta )
+  F0 <- pgamma(u, shape = beta) - pgamma(0, shape = beta)
   return(F0)
 }
 
