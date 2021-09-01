@@ -76,7 +76,7 @@ qzbollg <- function(q, alpha = 1, beta = 1, G = pnorm, ...) {
 #' rzbollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 rzbollg <- function(n, alpha = 1, beta = 1, G = pnorm, ...) {
-  v <- rgamma(n, beta, 1)
+  v <- rgamma(n, shape = beta)
   Q_G <- function(y) qzbollg(y, alpha, beta, G, ...)
   X <- Q_G((1 - exp(-v))^(1 / alpha) / ((1 - exp(-v))^(1 / alpha) + exp(-v / alpha)))
   return(X)

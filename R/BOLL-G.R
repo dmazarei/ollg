@@ -29,7 +29,7 @@
 pbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
   u <- G^alpha / (G^alpha + (1 - G)^alpha)
-  F0 <- pbeta(u, a, b) - pbeta(0, a, b)
+  F0 <- pbeta(u, shape1 = a, shape2 = b) - pbeta(0, shape1 = a, shape2 = b)
   return(F0)
 }
 
@@ -77,7 +77,7 @@ qbollg <- function(q, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #' rbollg(n, alpha = 2, a = 2, b = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 rbollg <- function(n, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
-  v <- rbeta(n, a, b)
+  v <- rbeta(n, shape1 = a, shape2 = b)
   Q_G <- function(y) qbollg(y, alpha, a, b, G, ...)
   X <- Q_G(v^(1 / alpha) / (v^(1 / alpha) + (1 - v)^(1 / alpha)))
   return(X)
