@@ -24,7 +24,7 @@
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' pbollg(x)
-#' pbollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' pbollg(x, alpha = 2, a = 2, b = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 pbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
@@ -37,7 +37,7 @@ pbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #'
 #' @name BOLLG
 #' @examples
-#' dbollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' dbollg(x, alpha = 2, a = 2, b = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(dbollg, -3, 3)
 #' @export
 dbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
@@ -56,7 +56,7 @@ dbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #'
 #' @name BOLLG
 #' @examples
-#' qbollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' qbollg(x, alpha = 2, a = 2, b = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 qbollg <- function(q, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   q0 <- function(x0) {
@@ -74,7 +74,7 @@ qbollg <- function(q, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #' @name BOLLG
 #' @examples
 #' n <- 10
-#' rbollg(n, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' rbollg(n, alpha = 2, a = 2, b = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 rbollg <- function(n, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   v <- rbeta(n, a, b)
@@ -87,7 +87,7 @@ rbollg <- function(n, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #'
 #' @name BOLLG
 #' @examples
-#' hbollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' hbollg(x, alpha = 2, a = 2, b = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(hbollg, -3, 3)
 #' @export
 hbollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
