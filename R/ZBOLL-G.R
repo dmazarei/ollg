@@ -23,7 +23,7 @@
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' pzbollg(x)
-#' pzbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' pzbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 pzbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
@@ -36,7 +36,7 @@ pzbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
 #'
 #' @name ZBOLLG
 #' @examples
-#' dzbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' dzbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(dzbollg, -3, 3)
 #' @export
 dzbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
@@ -73,7 +73,7 @@ qzbollg <- function(q, alpha = 1, beta = 1, G = pnorm, ...) {
 #' @name ZBOLLG
 #' @examples
 #' n <- 10
-#' rzbollg(n, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' rzbollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 rzbollg <- function(n, alpha = 1, beta = 1, G = pnorm, ...) {
   v <- rgamma(n, beta, 1)
@@ -86,7 +86,7 @@ rzbollg <- function(n, alpha = 1, beta = 1, G = pnorm, ...) {
 #'
 #' @name ZBOLLG
 #' @examples
-#' hzbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' hzbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(hzbollg, -3, 3)
 #' @export
 hzbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
