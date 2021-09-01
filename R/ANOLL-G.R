@@ -84,7 +84,7 @@ ranollg <- function(n, alpha = 1, beta = 1, G = pnorm, ...) {
 #'
 #' @name ANOLLG
 #' @examples
-#' hanollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' hanollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(hanollg, -3, 3)
 #' @export
 hanollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
