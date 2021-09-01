@@ -76,12 +76,11 @@ qrbollg <- function(q, alpha = 1, beta = 1, G = pnorm, ...) {
 #' rrbollg(n, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 rrbollg <- function(n, alpha = 1, beta = 1, G = pnorm, ...) {
-  v <- rgamma(n, beta, 1)
+  v <- runif(1e4)
   Q_G <- function(y) qrbollg(y, alpha, beta, G, ...)
-  X <- Q_G(exp(qgamma(1 - v, beta, 1) / alpha) / (exp(qgamma(1 - v, beta, 1) / alpha) + (1 - exp(qgamma(1 - v, beta, 1)))^(1 / alpha)))
+  X <- Q_G(exp(-qgamma((1 - v), beta, 1) / alpha) / (exp(-qgamma(1 - v, beta, 1) / alpha) + (1 - exp(-qgamma(1 - v, beta, 1)))^(1 / alpha)))
   return(X)
 }
-
 
 #'
 #' @name RBOLLG
