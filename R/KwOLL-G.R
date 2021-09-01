@@ -23,7 +23,7 @@
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' pkwollg(x)
-#' pkwollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' pkwollg(x, alpha = 2, a = 2, b = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 pkwollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
@@ -34,7 +34,7 @@ pkwollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #'
 #' @name KwOLLG
 #' @examples
-#' dkwollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' dkwollg(x, alpha = 2, a = 2, b = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(dkwollg, -3, 3)
 #' @importFrom stats numericDeriv  pnorm  runif uniroot
 #' @export
@@ -54,7 +54,7 @@ dkwollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #'
 #' @name KwOLLG
 #' @examples
-#' qkwollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' qkwollg(x, alpha = 2, a = 2, b = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 qkwollg <- function(q, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   q0 <- function(x0) {
@@ -72,7 +72,7 @@ qkwollg <- function(q, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #' @name KwOLLG
 #' @examples
 #' n <- 10
-#' rkwollg(n, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' rkwollg(n, alpha = 2, a = 2, b = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 rkwollg <- function(n, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
   u <- runif(n)
@@ -85,7 +85,7 @@ rkwollg <- function(n, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
 #'
 #' @name KwOLLG
 #' @examples
-#' hkwollg(x, alpha = 2, a = 1, b = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' hkwollg(x, alpha = 2, a = 2, b = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(hkwollg, -3, 3)
 #' @export
 hkwollg <- function(x, alpha = 1, a = 1, b = 1, G = pnorm, ...) {
