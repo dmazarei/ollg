@@ -49,13 +49,13 @@ Distribution function, density, quantile function, hazard
 \examples{
 x <- seq(0, 1, length.out = 21)
 pzbollg(x)
-pzbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
-dzbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+pzbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+dzbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 curve(dzbollg, -3, 3)
 qzbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 n <- 10
-rzbollg(n, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
-hzbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+rzbollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+hzbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 curve(hzbollg, -3, 3)
 }
 \references{

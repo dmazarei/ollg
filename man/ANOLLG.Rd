@@ -55,7 +55,7 @@ curve(danollg, -3, 3)
 qanollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 n <- 10
 ranollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
-hanollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+hanollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 curve(hanollg, -3, 3)
 }
 \references{
