@@ -23,7 +23,7 @@
 #' @examples
 #' x <- seq(0, 1, length.out = 21)
 #' prbollg(x)
-#' prbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' prbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 prbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
@@ -36,7 +36,7 @@ prbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
 #'
 #' @name RBOLLG
 #' @examples
-#' drbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' drbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(drbollg, -3, 3)
 #' @export
 drbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
@@ -73,7 +73,7 @@ qrbollg <- function(q, alpha = 1, beta = 1, G = pnorm, ...) {
 #' @name RBOLLG
 #' @examples
 #' n <- 10
-#' rrbollg(n, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' rrbollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' @export
 rrbollg <- function(n, alpha = 1, beta = 1, G = pnorm, ...) {
   v <- runif(1e4)
@@ -85,7 +85,7 @@ rrbollg <- function(n, alpha = 1, beta = 1, G = pnorm, ...) {
 #'
 #' @name RBOLLG
 #' @examples
-#' hrbollg(x, alpha = 2, beta = 1, G = pbeta, shape1 = 1, shape2 = 2)
+#' hrbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(hrbollg, -3, 3)
 #' @export
 hrbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
