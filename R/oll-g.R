@@ -106,4 +106,3 @@ hollg <- function(x, alpha = 1, G = pnorm, ...) {
 
 
 
-
