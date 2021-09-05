@@ -7,7 +7,7 @@ Authors@R: c(
     person("Hossein", "Haghbin", email = "haghbinh@gmail.com", role = "aut",comment = c(ORCID = "0000-0001-8416-2354")),
     person("Morad", "Alizadeh", email = "moradalizadeh78@gmail.com", role = "aut")
     )
-Maintainer: Hossein Haghbin <haghbinh@gmail.com>
+Maintainer: Danial Mazarei <danial.mazarei@gmail.com>
 Description: Distribution function, density, quantile function, hazard
   function and random generation for Odd log-logistic family
   of distributions (OLL-G) with baseline cdf G.
