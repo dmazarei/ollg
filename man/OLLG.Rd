@@ -48,7 +48,6 @@ Distribution function, density, quantile function, hazard
 x <- seq(0, 1, length.out = 21)
 pollg(x)
 pollg(x, alpha = 2, G = pbeta, shape1 = 1, shape2 = 2)
-
 dollg(x, alpha = 2, G = pbeta, shape1 = 1, shape2 = 2)
 curve(dollg, -3, 3)
 qollg(x, alpha = 2, G = pbeta, shape1 = 1, shape2 = 2)

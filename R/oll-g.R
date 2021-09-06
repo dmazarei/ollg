@@ -22,7 +22,6 @@
 #' x <- seq(0, 1, length.out = 21)
 #' pollg(x)
 #' pollg(x, alpha = 2, G = pbeta, shape1 = 1, shape2 = 2)
-#'
 #' @export
 pollg <- function(x, alpha = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
