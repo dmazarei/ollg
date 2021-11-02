@@ -42,7 +42,9 @@ the length is taken to be the number required.}
  distributions (ANOLL-G) for baseline cdf G.
 }
 \description{
-Distribution function, density, quantile function, hazard
+Computes the pdf, cdf, quantile and random numbers of the beta extended distribution due to Haghbin et al. (2017) specified by the pdf
+\deqn{f(x)=\frac{\alpha\beta\,g(x)\,\bar{G}(x)^{\alpha\beta-1}\left[1-\bar{G}(x)^\alpha\right]^{\beta-1}}{\left\{\left[1-\bar{G}(x)^\alpha\right]^\beta+\bar{G}(x)^{\alpha\beta}\right\}^2}}
+for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf, \eqn{\alpha > 0}, the scale parameter, \eqn{a > 0}, the first shape parameter, and \eqn{b > 0}, the second shape parameter.Also computes the Distribution function, density, quantile function, hazard
  function and random generation for A New Odd log-logistic family
  of distributions (ANOLL-G) with baseline cdf G.
 }
