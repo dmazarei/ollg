@@ -6,8 +6,8 @@
 #' @param x,q A numeric/quantiles	vector.
 #' @param n number of observations. If \code{length(n) > 1},
 #'  the length is taken to be the number required.
-#' @param alpha non-negative parameter.
-#' @param beta numeric parameter.
+#' @param alpha non-negative shape  parameter.
+#' @param beta non-negative shape parameter.
 #' @param G A baseline continuous cdf.
 #' @param ... The baseline cdf parameters.
 #' @return  \code{panollg} gives the distribution function,
