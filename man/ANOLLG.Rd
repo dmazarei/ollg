@@ -30,8 +30,7 @@ hanollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 
 \item{...}{The baseline cdf parameters.}
 
-\item{n}{number of random numbers to be generated. If \code{length(n) > 1},
-the length is taken to be the number required.}
+\item{n}{number of random numbers to be generated.}
 }
 \value{
 \code{panollg} gives the distribution function,

@@ -4,8 +4,7 @@
 #'
 #' @name ANOLLG
 #' @param x,q A numeric/quantiles	vector.
-#' @param n number of random numbers to be generated. If \code{length(n) > 1},
-#'  the length is taken to be the number required.
+#' @param n number of random numbers to be generated.
 #' @param alpha the value of the first shape parameter, must be positive, the default is 1
 #' @param beta the value of the first shape parameter, must be positive, the default is 1
 #' @param G A baseline continuous cdf.
