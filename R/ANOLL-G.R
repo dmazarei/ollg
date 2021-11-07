@@ -4,10 +4,10 @@
 #'
 #' @name ANOLLG
 #' @param x,q A numeric/quantiles	vector.
-#' @param n number of observations. If \code{length(n) > 1},
+#' @param n number of random numbers to be generated. If \code{length(n) > 1},
 #'  the length is taken to be the number required.
-#' @param alpha non-negative shape  parameter.
-#' @param beta non-negative shape parameter.
+#' @param alpha the value of the first shape parameter, must be positive, the default is 1
+#' @param beta the value of the first shape parameter, must be positive, the default is 1
 #' @param G A baseline continuous cdf.
 #' @param ... The baseline cdf parameters.
 #' @return  \code{panollg} gives the distribution function,
