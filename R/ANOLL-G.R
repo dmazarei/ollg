@@ -2,7 +2,7 @@
 #'
 #' Computes the pdf, cdf, hdf, quantile and random numbers of the beta extended distribution due to Haghbin et al. (2017) specified by the pdf
 #' \deqn{f(x)=\frac{\alpha\beta\,g(x)\,\bar{G}(x)^{\alpha\beta-1}\left[1-\bar{G}(x)^\alpha\right]^{\beta-1}}{\left\{\left[1-\bar{G}(x)^\alpha\right]^\beta+\bar{G}(x)^{\alpha\beta}\right\}^2}}
-#' for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf, \eqn{\alpha > 0}, the scale parameter, \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
+#' for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf,  \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
 #'
 #' @name ANOLLG
 #' @param x scaler or vector of values at which the pdf or cdf needs to be computed.
