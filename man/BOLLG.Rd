@@ -20,20 +20,21 @@ rbollg(n, alpha = 1, a = 1, b = 1, G = pnorm, ...)
 hbollg(x, alpha = 1, a = 1, b = 1, G = pnorm, ...)
 }
 \arguments{
-\item{x, q}{A numeric/quantiles    vector.}
+\item{x}{scaler or vector of values at which the pdf or cdf needs to be computed.}
 
-\item{alpha}{non-negative parameter.}
+\item{alpha}{the value of the first shape parameter, must be positive, the default is 1.}
 
-\item{a}{non-negative parameter.}
+\item{a}{the value of the scale parameter, must be positive, the default is 1.}
 
-\item{b}{non-negative parameter.}
+\item{b}{the value of the scale parameter, must be positive, the default is 1.}
 
 \item{G}{A baseline continuous cdf.}
 
 \item{...}{The baseline cdf parameters.}
 
-\item{n}{number of observations. If \code{length(n) > 1},
-the length is taken to be the number required.}
+\item{q}{scaler or vector of probabilities at which the quantile needs to be computed, must be between 0 and 1 - exp(-alpha).}
+
+\item{n}{number of random numbers to be generated.}
 }
 \value{
 \code{pbollg} gives the distribution function,
@@ -44,9 +45,10 @@ the length is taken to be the number required.}
  distributions (BOLL-G) for baseline cdf G.
 }
 \description{
-Distribution function, density, quantile function, hazard
- function and random generation for The beta Odd log-logistic family
- of distributions (BOLL-G) with baseline cdf G.
+Computes the pdf, cdf, hdf, quantile and random numbers
+of the beta extended distribution due to Cordeiro et al. (2016) specified by the pdf
+\deqn{f(x)=\frac{\alpha\,g(x)\,G(x)^{a\,\alpha-1}\bar{G}(x)^{b\,\alpha-1}}{B(a,b)\left[G(x)^\alpha+\bar{G}(x)^\alpha\right]^{a+b}}}
+for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf, \eqn{a,b > 0}, the scale parameter, \eqn{\alpha > 0}, the first shape parameter.
 }
 \examples{
 x <- seq(0, 1, length.out = 21)
