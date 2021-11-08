@@ -3,7 +3,7 @@
 #' Computes the pdf, cdf, hdf, quantile and random numbers
 #' of the beta extended distribution due to Cordeiro et al. (2016) specified by the pdf
 #' \deqn{f(x)=\frac{\alpha\,g(x)\,G(x)^{a\,\alpha-1}\bar{G}(x)^{b\,\alpha-1}}{B(a,b)\left[G(x)^\alpha+\bar{G}(x)^\alpha\right]^{a+b}}}
-#' for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf, \eqn{a,b > 0}, the scale parameter, \eqn{\alpha > 0}, the first shape parameter.
+#' for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf, \eqn{a, b > 0}, the scale parameter, \eqn{\alpha > 0}, the first shape parameter.
 #'
 #' @name BOLLG
 #' @param x scaler or vector of values at which the pdf or cdf needs to be computed.
