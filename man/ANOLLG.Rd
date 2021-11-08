@@ -20,7 +20,7 @@ ranollg(n, alpha = 1, beta = 1, G = pnorm, ...)
 hanollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 }
 \arguments{
-\item{x, q}{A numeric/quantiles    vector.}
+\item{x}{scaler or vector of values at which the pdf or cdf needs to be computed.}
 
 \item{alpha}{the value of the first shape parameter, must be positive, the default is 1}
 
@@ -29,6 +29,8 @@ hanollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 \item{G}{A baseline continuous cdf.}
 
 \item{...}{The baseline cdf parameters.}
+
+\item{q}{scaler or vector of probabilities at which the quantile needs to be computed, must be between 0 and 1 - exp(-alpha).}
 
 \item{n}{number of random numbers to be generated.}
 }
@@ -41,7 +43,9 @@ hanollg(x, alpha = 1, beta = 1, G = pnorm, ...)
  distributions (ANOLL-G) for baseline cdf G.
 }
 \description{
-A New Odd log-logistic family of distributions (ANOLL-G)
+Computes the pdf, cdf, quantile and random numbers of the beta extended distribution due to Haghbin et al. (2017) specified by the pdf
+\deqn{f(x)=\frac{\alpha\beta\,g(x)\,\bar{G}(x)^{\alpha\beta-1}\left[1-\bar{G}(x)^\alpha\right]^{\beta-1}}{\left\{\left[1-\bar{G}(x)^\alpha\right]^\beta+\bar{G}(x)^{\alpha\beta}\right\}^2}}
+for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf, \eqn{\alpha > 0}, the scale parameter, \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
 }
 \examples{
 x <- seq(0, 1, length.out = 21)
