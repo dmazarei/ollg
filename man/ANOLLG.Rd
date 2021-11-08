@@ -24,7 +24,7 @@ hanollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 
 \item{alpha}{the value of the first shape parameter, must be positive, the default is 1.}
 
-\item{beta}{the value of the first shape parameter, must be positive, the default is 1.}
+\item{beta}{the value of the second shape parameter, must be positive, the default is 1.}
 
 \item{G}{A baseline continuous cdf.}
 
