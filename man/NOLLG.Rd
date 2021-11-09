@@ -20,18 +20,19 @@ rnollg(n, alpha = 1, beta = 1, G = pnorm, ...)
 hnollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 }
 \arguments{
-\item{x, q}{A numeric/quantiles    vector.}
+\item{x}{scaler or vector of values at which the pdf or cdf needs to be computed.}
 
-\item{alpha}{non-negative parameter.}
+\item{alpha}{the value of the first shape parameter, must be positive, the default is 1.}
 
-\item{beta}{non-negative parameter.}
+\item{beta}{the value of the second shape parameter, must be positive, the default is 1.}
 
 \item{G}{A baseline continuous cdf.}
 
 \item{...}{The baseline cdf parameters.}
 
-\item{n}{number of observations. If \code{length(n) > 1},
-the length is taken to be the number required.}
+\item{q}{scaler or vector of probabilities at which the quantile needs to be computed, must be between 0 and 1 - exp(-alpha).}
+
+\item{n}{number of random numbers to be generated.}
 }
 \value{
 \code{pnollg} gives the distribution function,
@@ -42,9 +43,9 @@ the length is taken to be the number required.}
  distributions (NOLL-G) for baseline cdf G.
 }
 \description{
-Distribution function, density, quantile function, hazard
- function and random generation for New Odd log-logistic family
- of distributions (NOLL-G) with baseline cdf G.
+Computes the pdf, cdf, hdf, quantile and random numbers of the beta extended distribution due to Alizadeh et al. (2019) specified by the pdf
+\deqn{f(x)=\frac{g(x)\,G(x)^{\alpha-1}\bar{G}(x)^{\beta-1}\left[\alpha+(\beta-\alpha)G(x)\right]}{\left[G(x)^\alpha+\bar{G}(x)^\beta\right]^2}}
+for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf,  \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
 }
 \examples{
 x <- seq(0, 1, length.out = 21)
