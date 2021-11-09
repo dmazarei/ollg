@@ -20,20 +20,21 @@ rkwollg(n, alpha = 1, a = 1, b = 1, G = pnorm, ...)
 hkwollg(x, alpha = 1, a = 1, b = 1, G = pnorm, ...)
 }
 \arguments{
-\item{x, q}{A numeric/quantiles    vector.}
+\item{x}{scaler or vector of values at which the pdf or cdf needs to be computed.}
 
-\item{alpha}{non-negative parameter.}
+\item{alpha}{the value of the first shape parameter, must be positive, the default is 1.}
 
-\item{a}{non-negative parameter.}
+\item{a}{the value of the scale parameter, must be positive, the default is 1.}
 
-\item{b}{non-negative parameter.}
+\item{b}{the value of the scale parameter, must be positive, the default is 1.}
 
 \item{G}{A baseline continuous cdf.}
 
 \item{...}{The baseline cdf parameters.}
 
-\item{n}{number of observations. If \code{length(n) > 1},
-the length is taken to be the number required.}
+\item{q}{scaler or vector of probabilities at which the quantile needs to be computed, must be between 0 and 1 - exp(-alpha).}
+
+\item{n}{number of random numbers to be generated.}
 }
 \value{
 \code{pkwollg} gives the distribution function,
@@ -44,9 +45,10 @@ the length is taken to be the number required.}
  distributions (KwOLL-G) for baseline cdf G.
 }
 \description{
-Distribution function, density, quantile function, hazard
- function and random generation for Kumaraswamy Odd log-logistic family
- of distributions (KwOLL-G) with baseline cdf G.
+Computes the pdf, cdf, hdf, quantile and random numbers
+of the beta extended distribution due to Alizadeh et al. (2017) specified by the pdf
+\deqn{f(x)=\frac{a\,b\,\alpha\,g(x)\,G(x)^{a\,\alpha-1}\bar{G}(x)^{\alpha-1}}{\left[G(x)^\alpha+\bar{G}(x)^\alpha\right]^{a+1}}\times \left\{1-\left[\frac{G(x)^\alpha}{G(x)^\alpha+\bar{G}(x)^\alpha}\right]^a\right\}^{b-1}}
+for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf, \eqn{a, b > 0}, the scale parameter, \eqn{\alpha > 0}, the first shape parameter.
 }
 \examples{
 x <- seq(0, 1, length.out = 21)
