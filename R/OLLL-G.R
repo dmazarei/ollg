@@ -9,7 +9,7 @@
 #' @param q scaler or vector of probabilities at which the quantile needs to be computed.
 #' @param n number of random numbers to be generated.
 #' @param alpha the value of the first shape parameter, must be positive, the default is 1.
-#' @param beta the value of the second shape parameter and \eqn{0 < \beta < 1}, the default is 0.1.
+#' @param beta the value of the second shape parameter, \eqn{0 < \beta < 1}, the default is 0.1.
 #' @param G A baseline continuous cdf.
 #' @param ... The baseline cdf parameters.
 #' @return  \code{polllg} gives the distribution function,
