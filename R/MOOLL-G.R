@@ -6,7 +6,7 @@
 #'
 #' @name MOOLLG
 #' @param x scaler or vector of values at which the pdf or cdf needs to be computed.
-#' @param q scaler or vector of probabilities at which the quantile needs to be computed, must be between 0 and 1 - exp(-alpha).
+#' @param q scaler or vector of probabilities at which the quantile needs to be computed.
 #' @param n number of random numbers to be generated.
 #' @param alpha the value of the first shape parameter, must be positive, the default is 1.
 #' @param beta the value of the second shape parameter, must be positive, the default is 1.

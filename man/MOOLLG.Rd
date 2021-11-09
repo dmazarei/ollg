@@ -30,7 +30,7 @@ hmoollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 
 \item{...}{The baseline cdf parameters.}
 
-\item{q}{scaler or vector of probabilities at which the quantile needs to be computed, must be between 0 and 1 - exp(-alpha).}
+\item{q}{scaler or vector of probabilities at which the quantile needs to be computed.}
 
 \item{n}{number of random numbers to be generated.}
 }
