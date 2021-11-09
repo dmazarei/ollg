@@ -1,14 +1,14 @@
 #' Odd log-logistic family of distributions (OLL-G)
 #'
-#'  Distribution function, density, quantile function, hazard
-#'  function and random generation for Odd log-logistic family
-#'  of distributions (OLL-G) with baseline cdf G.
+#' Computes the pdf, cdf, hdf, quantile and random numbers of the beta extended distribution due to Gleaton et al. (2006) specified by the pdf
+#' \deqn{f(x)=\frac{\alpha\,g(x)\,G(x)^{\alpha-1}\bar{G}(x)^{\alpha-1}}{\left[G(x)^\alpha+\bar{G}(x)^\alpha\right]^2}}
+#' for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf,  \eqn{\alpha > 0}, the first shape parameter.
 #'
 #' @name OLLG
-#' @param x,q A numeric/quantiles	vector.
-#' @param n number of observations. If \code{length(n) > 1},
-#'  the length is taken to be the number required.
-#' @param alpha non-negative parameter.
+#' @param x scaler or vector of values at which the pdf or cdf needs to be computed.
+#' @param q scaler or vector of probabilities at which the quantile needs to be computed.
+#' @param n number of random numbers to be generated.
+#' @param alpha the value of the first shape parameter, must be positive, the default is 1.
 #' @param G A baseline continuous cdf.
 #' @param ... The baseline cdf parameters.
 #' @return  \code{pollg} gives the distribution function,
