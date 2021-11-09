@@ -24,7 +24,7 @@ holllg(x, alpha = 1, beta = 0.1, G = pnorm, ...)
 
 \item{alpha}{the value of the first shape parameter, must be positive, the default is 1.}
 
-\item{beta}{the value of the second shape parameter, \eqn{0 < \beta < 1}, the default is 0.1.}
+\item{beta}{the value of the second shape parameter, between 0 and 1, the default is 0.1.}
 
 \item{G}{A baseline continuous cdf.}
 
