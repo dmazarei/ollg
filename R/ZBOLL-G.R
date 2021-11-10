@@ -1,15 +1,15 @@
 #' The Zografos-Balakrishnan  Odd log-logistic family of distributions (ZBOLL-G)
 #'
-#'  Distribution function, density, quantile function, hazard
-#'  function and random generation for The Zografos-Balakrishnan  Odd log-logistic family
-#'  of distributions (ZBOLL-G) with baseline cdf G.
+#' Computes the pdf, cdf, hdf, quantile and random numbers of the beta extended distribution due to Cordeiro et al. (2016) specified by the pdf
+#' \deqn{f(x)=\frac{\alpha\,g(x)\,G(x)^{\alpha-1}\bar{G}(x)^{\alpha-1}}{\Gamma(\beta)\left[G(x)^\alpha+\bar{G}(x)^\alpha\right]^2}\,\left\{-\log\left[1-\frac{G(x)^\alpha}{G(x)^\alpha+\bar{G}(x)^\alpha}\right]\right\}^{\beta-1}}
+#' for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf,  \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
 #'
 #' @name ZBOLLG
-#' @param x,q A numeric/quantiles	vector.
-#' @param n number of observations. If \code{length(n) > 1},
-#'  the length is taken to be the number required.
-#' @param alpha non-negative parameter.
-#' @param beta non-negative parameter..
+#' @param x scaler or vector of values at which the pdf or cdf needs to be computed.
+#' @param q scaler or vector of probabilities at which the quantile needs to be computed.
+#' @param n number of random numbers to be generated.
+#' @param alpha the value of the first shape parameter, must be positive, the default is 1.
+#' @param beta the value of the second shape parameter, must be positive, the default is 1.
 #' @param G A baseline continuous cdf.
 #' @param ... The baseline cdf parameters.
 #' @return  \code{pzbollg} gives the distribution function,
