@@ -44,8 +44,8 @@ hnollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 }
 \description{
 Computes the pdf, cdf, hdf, quantile and random numbers of the beta extended distribution due to Alizadeh et al. (2019) specified by the pdf
-\deqn{f(x)=\frac{g(x)\,G(x)^{\alpha-1}\bar{G}(x)^{\beta-1}\left[\alpha+(\beta-\alpha)G(x)\right]}{\left[G(x)^\alpha+\bar{G}(x)^\beta\right]^2}}
-for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf,  \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
+\deqn{f=\frac{g\,G^{\alpha-1}\bar{G}^{\beta-1}[\alpha+(\beta-\alpha)G]}{[G^\alpha+\bar{G}^\beta]^2}}
+for \eqn{G} any valid continuous cdf , \eqn{\bar{G}=1-G}, \eqn{g} the corresponding pdf,  \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
 }
 \examples{
 x <- seq(0, 1, length.out = 21)
