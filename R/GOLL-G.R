@@ -1,8 +1,8 @@
 #' Generalized Odd log-logistic family of distributions (GOLL-G)
 #'
 #' Computes the pdf, cdf, hdf, quantile and random numbers of the beta extended distribution due to Cordeiro et al. (2017) specified by the pdf
-#' \deqn{f(x)=\frac{\alpha\beta\,g(x)\,G(x)^{\alpha\beta-1}\left[1-G(x)^\alpha\right]^{\beta-1}}{\left[G(x)^{\alpha\beta}+\left[1-G(x)^\alpha\right]^\beta\right]^2}}
-#' for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf,  \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
+#' \deqn{f=\frac{\alpha\beta\,g\,G^{\alpha\beta-1}[1-G^\alpha]^{\beta-1}}{[G^{\alpha\beta}+[1-G^\alpha]^\beta]^2}}
+#' for \eqn{G} any valid continuous cdf , \eqn{\bar{G}=1-G}, \eqn{g} the corresponding pdf,  \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
 #'
 #' @name GOLLG
 #' @param x scaler or vector of values at which the pdf or cdf needs to be computed.
