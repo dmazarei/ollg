@@ -5,7 +5,7 @@ Version: 0.0.1
 Authors@R: c(
     person("Danial", "Mazarei", email = "danial.mazarei@gmail.com", role = c("aut", "cre")),
     person("Hossein", "Haghbin", email = "haghbinh@gmail.com", role = "aut",comment = c(ORCID = "0000-0001-8416-2354")),
-    person("Morad", "Alizadeh", email = "moradalizadeh78@gmail.com", role = "aut")
+    person("Morad", "Alizadeh", email = "m.alizadeh@pgu.ac.ir", role = "aut")
     )
 Maintainer: Danial Mazarei <danial.mazarei@gmail.com>
 Description: Distribution function, density, quantile function, hazard
