@@ -44,8 +44,8 @@ hrbollg(x, alpha = 1, beta = 1, G = pnorm, ...)
 }
 \description{
 Computes the pdf, cdf, hdf, quantile and random numbers of the beta extended distribution due to Esmaeili et al. (2020) specified by the pdf
-\deqn{f(x)=\frac{\alpha\,g(x)\,G(x)^{\alpha-1}\bar{G}(x)^{\alpha-1}}{\Gamma(\beta)\left[G(x)^\alpha+\bar{G}(x)^\alpha\right]^2}\,\left\{-\log\left[\frac{G(x)^\alpha}{G(x)^\alpha+\bar{G}(x)^\alpha}\right]\right\}^{\beta-1}}
-for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf,  \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
+\deqn{f=\frac{\alpha\,g\,G^{\alpha-1}\bar{G}^{\alpha-1}}{\Gamma(\beta)[G^\alpha+\bar{G}^\alpha]^2}\,\{-\log[\frac{G^\alpha}{G^\alpha+\bar{G}^\alpha}]\}^{\beta-1}}
+for \eqn{G} any valid continuous cdf , \eqn{\bar{G}=1-G}, \eqn{g} the corresponding pdf, \eqn{\Gamma(\beta)} the Gamma funcion, \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
 }
 \examples{
 x <- seq(0, 1, length.out = 21)
