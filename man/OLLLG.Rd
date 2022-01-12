@@ -44,8 +44,8 @@ holllg(x, alpha = 1, beta = 0.1, G = pnorm, ...)
 }
 \description{
 Computes the pdf, cdf, hdf, quantile and random numbers of the beta extended distribution due to Haghbin et al. (2017) specified by the pdf
-\deqn{f(x)=\frac{\alpha\beta\,g(x)\,G(x)^{\alpha-1}\bar{G}(x)^{\alpha-1}}{-\left[G(x)^\alpha+\bar{G}(x)^\alpha\right]\left[(1-\beta)\,G(x)^\alpha+\bar{G}(x)^\alpha\right]\log(1-\beta)}}
-for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf,  \eqn{\alpha > 0}, the first shape parameter, and \eqn{0 < \beta < 1}, the second shape parameter.
+\deqn{f=\frac{\alpha\beta\,g\,G^{\alpha-1}\bar{G}^{\alpha-1}}{-[G^\alpha+\bar{G}^\alpha][(1-\beta)\,G^\alpha+\bar{G}^\alpha]\log(1-\beta)}}
+for \eqn{G} any valid continuous cdf , \eqn{\bar{G}=1-G}, \eqn{g} the corresponding pdf,  \eqn{\alpha > 0}, the first shape parameter, and \eqn{0 < \beta < 1}, the second shape parameter.
 }
 \examples{
 x <- seq(0, 1, length.out = 21)
