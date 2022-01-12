@@ -24,9 +24,9 @@ hkwollg(x, alpha = 1, a = 1, b = 1, G = pnorm, ...)
 
 \item{alpha}{the value of the first shape parameter, must be positive, the default is 1.}
 
-\item{a}{the value of the scale parameter, must be positive, the default is 1.}
+\item{a}{the value of the shape parameter, must be positive, the default is 1.}
 
-\item{b}{the value of the scale parameter, must be positive, the default is 1.}
+\item{b}{the value of the shape parameter, must be positive, the default is 1.}
 
 \item{G}{A baseline continuous cdf.}
 
@@ -47,8 +47,8 @@ hkwollg(x, alpha = 1, a = 1, b = 1, G = pnorm, ...)
 \description{
 Computes the pdf, cdf, hdf, quantile and random numbers
 of the beta extended distribution due to Alizadeh et al. (2017) specified by the pdf
-\deqn{f(x)=\frac{a\,b\,\alpha\,g(x)\,G(x)^{a\,\alpha-1}\bar{G}(x)^{\alpha-1}}{\left[G(x)^\alpha+\bar{G}(x)^\alpha\right]^{a+1}}\times \left\{1-\left[\frac{G(x)^\alpha}{G(x)^\alpha+\bar{G}(x)^\alpha}\right]^a\right\}^{b-1}}
-for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf, \eqn{a, b > 0}, the scale parameter, \eqn{\alpha > 0}, the first shape parameter.
+\deqn{f=\frac{a\,b\,\alpha\,g\,G^{a\,\alpha-1}\bar{G}^{\alpha-1}}{[G^\alpha+\bar{G}^\alpha]^{a+1}}\times \{1-[\frac{G^\alpha}{G^\alpha+\bar{G}^\alpha}]^a\}^{b-1}}
+for \eqn{G} any valid continuous cdf , \eqn{\bar{G}=1-G}, \eqn{g} the corresponding pdf, \eqn{a, b > 0}, the shape parameter, \eqn{\alpha > 0}, the first shape parameter.
 }
 \examples{
 x <- seq(0, 1, length.out = 21)
