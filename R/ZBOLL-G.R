@@ -1,8 +1,8 @@
 #' The Zografos-Balakrishnan  Odd log-logistic family of distributions (ZBOLL-G)
 #'
 #' Computes the pdf, cdf, hdf, quantile and random numbers of the beta extended distribution due to Cordeiro et al. (2016) specified by the pdf
-#' \deqn{f(x)=\frac{\alpha\,g(x)\,G(x)^{\alpha-1}\bar{G}(x)^{\alpha-1}}{\Gamma(\beta)\left[G(x)^\alpha+\bar{G}(x)^\alpha\right]^2}\,\left\{-\log\left[1-\frac{G(x)^\alpha}{G(x)^\alpha+\bar{G}(x)^\alpha}\right]\right\}^{\beta-1}}
-#' for \eqn{G} any valid cdf, \eqn{g} the corresponding pdf,  \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
+#' \deqn{f=\frac{\alpha\,g\,G^{\alpha-1}\bar{G}^{\alpha-1}}{\Gamma(\beta)[G^\alpha+\bar{G}^\alpha]^2}\,\{-\log[1-\frac{G^\alpha}{G^\alpha+\bar{G}^\alpha}]\}^{\beta-1}}
+#' for \eqn{G} any valid continuous cdf , \eqn{\bar{G}=1-G}, \eqn{g} the corresponding pdf, \eqn{\Gamma(\beta)} the Gamma funcion,  \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
 #'
 #' @name ZBOLLG
 #' @param x scaler or vector of values at which the pdf or cdf needs to be computed.
