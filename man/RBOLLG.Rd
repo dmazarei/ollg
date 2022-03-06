@@ -56,8 +56,10 @@ curve(drbollg, -3, 3)
 qrbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 n <- 10
 rrbollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+\dontrun{
 hrbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 curve(hrbollg, -3, 3)
+}
 }
 \references{
 Esmaeili, H., Lak, F., Altun, E. (2020). The Ristic-Balakrishnan odd log-logistic family of distributions: Properties and Applications. Statistics, Optimization Information Computing, 8(1), 17-35.

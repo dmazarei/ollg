@@ -85,8 +85,10 @@ rrbollg <- function(n, alpha = 1, beta = 1, G = pnorm, ...) {
 #'
 #' @name RBOLLG
 #' @examples
+#' \dontrun{
 #' hrbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(hrbollg, -3, 3)
+#' }
 #' @export
 hrbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
   G0 <- function(y) G(y, ...)
