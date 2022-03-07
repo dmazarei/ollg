@@ -21,9 +21,11 @@
 #' @references Esmaeili, H., Lak, F., Altun, E. (2020). The Ristic-Balakrishnan odd log-logistic family of distributions: Properties and Applications. Statistics, Optimization Information Computing, 8(1), 17-35.
 #' @importFrom stats numericDeriv  pnorm  rgamma qgamma pgamma uniroot  integrate
 #' @examples
+#' \dontrun{
 #' x <- seq(0, 1, length.out = 21)
 #' prbollg(x)
 #' prbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+#' }
 #' @export
 prbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
   G <- sapply(x, G, ...)
@@ -36,8 +38,10 @@ prbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
 #'
 #' @name RBOLLG
 #' @examples
+#' \dontrun{
 #' drbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 #' curve(drbollg, -3, 3)
+#' }
 #' @export
 drbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
   G0 <- function(y) G(y, ...)
@@ -55,7 +59,9 @@ drbollg <- function(x, alpha = 1, beta = 1, G = pnorm, ...) {
 #'
 #' @name RBOLLG
 #' @examples
+#' \dontrun{
 #' qrbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
+#' }
 #' @export
 qrbollg <- function(q, alpha = 1, beta = 1, G = pnorm, ...) {
   q0 <- function(x0) {

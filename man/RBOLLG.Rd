@@ -48,6 +48,7 @@ Computes the pdf, cdf, hdf, quantile and random numbers of the beta extended dis
 for \eqn{G} any valid continuous cdf , \eqn{\bar{G}=1-G}, \eqn{g} the corresponding pdf, \eqn{\Gamma(\beta)} the Gamma funcion, \eqn{\alpha > 0}, the first shape parameter, and \eqn{\beta > 0}, the second shape parameter.
 }
 \examples{
+\dontrun{
 x <- seq(0, 1, length.out = 21)
 prbollg(x)
 prbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
@@ -56,10 +57,9 @@ curve(drbollg, -3, 3)
 qrbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 n <- 10
 rrbollg(n, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
-\dontrun{
 hrbollg(x, alpha = 2, beta = 2, G = pbeta, shape1 = 1, shape2 = 2)
 curve(hrbollg, -3, 3)
-}
+
 }
 \references{
 Esmaeili, H., Lak, F., Altun, E. (2020). The Ristic-Balakrishnan odd log-logistic family of distributions: Properties and Applications. Statistics, Optimization Information Computing, 8(1), 17-35.
