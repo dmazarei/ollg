@@ -1,6 +1,6 @@
 Package: ollg
 Type: Package
-Title:  Computes some measures of OLL-G Family of Distributions
+Title:  Computes some Measures of OLL-G Family of Distributions
 Version: 1.0.0
 Authors@R: c(
     person("Danial", "Mazarei", email = "danial.mazarei@gmail.com", role = c("aut", "cre")),
