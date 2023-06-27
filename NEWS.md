@@ -1,4 +1,4 @@
-# ollg (development version)
+# ollg
 
 # ollg 1.0.0
 
