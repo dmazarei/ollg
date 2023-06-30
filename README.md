@@ -7,8 +7,6 @@
 The R package *ollg* for Computes the pdf, cdf, quantile function, hazard function and generating random numbers for Odd log-logistic family (OLL-G). This family have been developed by different authors in the recent years. See Alizadeh (2019) <doi:10.31801/cfsuasmas.542988> for example.
 
 
-This work is funded by national funds through the FCT - Fundação para a Ciência e a Tecnologia, I.P., under the scope of the projects UIDB/00297/2020 and UIDP/00297/2020 (Center for Mathematics and Applications)".
-
 ## Installation
 You can install the **stable** version from
 [CRAN](https://cran.r-project.org/package=ollg).
