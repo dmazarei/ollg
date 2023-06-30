@@ -20,7 +20,7 @@ You can install the **development** version from
 
 ```s
 # install.packages("remotes")
-remotes::install_github("dmazarei/ollf")
+remotes::install_github("dmazarei/ollg")
 ```
 
 ## To cite package `ollg` in publications use:
@@ -30,7 +30,7 @@ remotes::install_github("dmazarei/ollf")
 
 A BibTeX entry for LaTeX users is
 
-  @Manual{ImpShrinkage,
+  @Manual{ollg,
     title = {ollg: Computes some Measures of OLL-G Family of Distributions},
     author = {Danial Mazarei and Hossein Haghbin and Morad Alizadeh},
     year = {2022},
