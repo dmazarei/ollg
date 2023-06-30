@@ -4,7 +4,7 @@
 [![Downloads](https://cranlogs.r-pkg.org/badges/ollg)](https://cran.r-project.org/package=ollg)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-The R package *ollg* for Computes the pdf, cdf, quantile function, hazard function and generating random numbers for Odd log-logistic family (OLL-G). This family have been developed by different authors in the recent years. See Alizadeh (2019) <doi:10.31801/cfsuasmas.542988> for example.
+The R package *ollg* : Computes the pdf, cdf, quantile function, hazard function and generating random numbers for Odd log-logistic family (OLL-G). This family have been developed by different authors in the recent years. See Alizadeh (2019) <doi:10.31801/cfsuasmas.542988> for example.
 
 
 ## Installation
