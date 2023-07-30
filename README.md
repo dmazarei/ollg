@@ -1,4 +1,4 @@
-ImpShrinkage <img src="man/inst/figures/logo.png" align="right" />
+ollg <img src="man/inst/figures/logo.png" align="right" />
 
 # ollg
 [![R-CMD-check](https://github.com/dmazarei/ollg/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dmazarei/ollg/actions/workflows/R-CMD-check.yaml)
