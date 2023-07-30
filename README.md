@@ -1,6 +1,6 @@
-ollg <img src="inst/figures/logo.png" align="right" />
 
-# ollg
+
+# ollg <img src="inst/figures/logo.png" align="right" />
 [![R-CMD-check](https://github.com/dmazarei/ollg/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dmazarei/ollg/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/ollg)](https://cran.r-project.org/package=ollg)
 [![Last week Downloads](https://cranlogs.r-pkg.org/badges/last-week/ollg)](https://cran.r-project.org/package=ollg)
