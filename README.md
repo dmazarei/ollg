@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 ollg <img src="inst/figures/logo.png"  align="right" width="240" height="240" />
+=======
+>>>>>>> b86983c5825a97e7602d89e996f1f7870cfeddba
 
-# ollg
+
+# ollg <img src="inst/figures/logo.png" align="right" />
 [![R-CMD-check](https://github.com/dmazarei/ollg/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dmazarei/ollg/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/ollg)](https://cran.r-project.org/package=ollg)
 [![Last week Downloads](https://cranlogs.r-pkg.org/badges/last-week/ollg)](https://cran.r-project.org/package=ollg)
