@@ -1,4 +1,4 @@
-ollg <img src="inst/figures/logo.png" align="right" />
+ollg <img src="inst/figures/logo.png"  align="right" width="240" height="240" />
 
 # ollg
 [![R-CMD-check](https://github.com/dmazarei/ollg/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dmazarei/ollg/actions/workflows/R-CMD-check.yaml)
