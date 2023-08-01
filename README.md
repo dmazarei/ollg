@@ -1,4 +1,4 @@
-ollg <img src="inst/figures/logo.png"  align="right" width="240" height="240" />
+ollg <img src="inst/figures/logo.png"  align="right" width="250" height="260" />
 
 [![R-CMD-check](https://github.com/dmazarei/ollg/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dmazarei/ollg/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/ollg)](https://cran.r-project.org/package=ollg)
